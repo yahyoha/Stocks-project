@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+
+{% block main %}
+    <table style="margin-left:auto;margin-right:auto;">
+        <thead>
+            <th> Symbol</th>
+            <th> Shares</th>
+            <th> Price</th>
+            <th> Transacted</th>
+        </thead>
+
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.stocksymbol }}</td>
+                <td>{{ row.shares }}</td>
+                <td>{{ row.share_price }}</td>
+                <td>{{row.Timestamp}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+
+    </table>
+{% endblock %}

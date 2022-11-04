@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block main %}
+    <table style="margin-left:auto;margin-right:auto;">
+        <thead>
+            <th class="text-start">Symbol</th>
+            <th class="text-start">company</th>
+            <th class="text-start">Shares</th>
+            <th class="text-start">Price</th>
+            <th class="text-start">Total</th>
+
+        </thead>
+    <tbody>
+        {% for row in rows %}
+        <tr>
+            {% if row.shares !=0 %}
+
+                <td>{{ row.stocksymbol }}</td>
+                <td>{{row.company }}</td>
+                <td>{{ row.shares }}</td>
+                <td>{{ "$%.2f"|format(row.price|float) }}</td>
+                <td>{{ "$%.2f"|format(row.total|float) }}</td>
+            {% endif%}
+            </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="4">Cash</td>
+            <td colspan="5">{{cash}}</td>
+        </tr>
+
+        <tr>
+            <td colspan="4">total</td>
+            <td colspan="5">{{total}}</td>
+        </tr>
+    </tbody>
+
+    </table>
+
+{% endblock %}

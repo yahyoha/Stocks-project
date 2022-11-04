@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    stock details
+{% endblock %}
+
+{% block main %}
+    <!-- <p>The result of your request are:</p>
+    <p>company name: {{stock_company }}</p>
+    <p>company symbol: {{stock_symbol}}</p>
+    <p>stock price: {{stock_price}}</p> -->
+    <p>A share of {{stock_company}} ({{stock_symbol}}) costs {{stock_price}}.</p>
+{% endblock %}
